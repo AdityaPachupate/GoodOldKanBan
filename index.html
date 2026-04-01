@@ -683,15 +683,8 @@
 
     <!-- TOP BANNER -->
     <div id="site-banner">
-        <div style="flex: 1;">🖥️ <strong>GoodOld Kanban</strong> &nbsp;|&nbsp; <span>v1.0.2 BETA</span></div>
-        <div style="flex: 2; text-align: center;">
-            <span id="datetime-display"></span> &nbsp;|&nbsp; 
-            <a href="#" onclick="showModal('About Developer', 'i love the way internet was before attention focused algorithms hence designed this website to take me back in time.<br><br><a href=\'https://x.com/Adityatwtss\' target=\'_blank\'>𝕏 (@Adityatwtss)</a><br><a href=\'https://adityapachupate.vercel.app/\' target=\'_blank\'>📁 Portfolio</a>'); return false;">About Developer</a> &nbsp;|&nbsp; 
-            <a href="https://www.buymeacoffee.com/" target="_blank">Buy me a coffee</a>
-        </div>
-        <div style="flex: 1; text-align: right;">
-            <a href="#" onclick="showTab('tips'); return false;">System Help</a>
-        </div>
+        <div>🖥️ <strong>GoodOld Kanban</strong> &nbsp;|&nbsp; <span>v1.0.2 BETA</span></div>
+        <div id="datetime-display"></div>
     </div>
 
     <!-- HEADER -->
@@ -1408,7 +1401,7 @@
                 showModal("Cannot Remove", "Cannot remove a column that has tasks. Move or delete tasks first.");
                 return;
             }
-            showModal("Remove Column", `Remove column "${col.name}"?`, () => {
+            showModal("Remove Column", `Remove column "${escHtml(col.name)}"?`, () => {
                 board.columns = board.columns.filter(c => c.id !== colId);
                 save();
                 renderBoard();
@@ -1608,7 +1601,7 @@
         }
 
         function removeTag(tagName) {
-            showModal("Remove Tag", `Remove tag "${tagName}"?`, () => {
+            showModal("Remove Tag", `Remove tag "${escHtml(tagName)}"?`, () => {
                 board.tags = board.tags.filter(t => t.name !== tagName);
                 save();
                 renderBoard();
