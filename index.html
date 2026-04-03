@@ -660,6 +660,83 @@
             gap: 8px;
             background: #cccccc;
         }
+
+        /* ---- MOBILE RESPONSIVENESS ---- */
+        @media (max-width: 768px) {
+            #site-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 4px;
+            }
+
+            #header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #nav-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 6px 4px;
+                gap: 6px;
+                min-height: auto;
+            }
+
+            .nav-tab {
+                margin-bottom: 4px;
+            }
+
+            #nav-right {
+                position: static;
+                text-align: center;
+                width: 100%;
+                margin-top: 4px;
+                padding-top: 4px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            #main-wrap {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+                min-width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #cccccc;
+            }
+
+            #board-table, 
+            #board-table > tbody, 
+            #board-table > tbody > tr, 
+            #board-table > tbody > tr > td {
+                display: block;
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                padding: 0 !important;
+                margin-bottom: 10px;
+            }
+
+            #board-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            #board-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .kanban-col {
+                margin-bottom: 15px;
+            }
+            
+            #add-col-box {
+                min-width: 0;
+            }
+        }
     </style>
 </head>
 
